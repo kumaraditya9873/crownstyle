@@ -1,28 +1,16 @@
-import {
-  // auth,
-  signInWithGooglePopup,
-  // signInWitheGoogleRedirect,
-  createUserDocumentFromAuth,
-} from "../../utils/firebase/firebase.utils.js";
-// ../../utils/firebase/firebase.utils
 import SignUpForm from "../../sign-up-form/sign-up-form.component.jsx";
-
-const SignIn = () => {
-  const logGoogleUser = async () => {
-    const { user } = await signInWithGooglePopup();
-    const userDocRef = await createUserDocumentFromAuth(user);
-  };
-
+import SignInForm from "../../components/sign-in-form/sign-in-form.component.jsx";
+import "./authentication.styles.scss";
+const Authentication = () => {
   return (
-    <div>
-      <h1>Sign In Page</h1>
-      <button onClick={logGoogleUser}>Sign in with Google Popup</button>
+    <div className="authentication-container">
+      <SignInForm />
       <SignUpForm />
     </div>
   );
 };
 
-export default SignIn;
+export default Authentication;
 
 // <button onClick={signInWitheGoogleRedirect}>
 //   Sign in with Google Redirect
